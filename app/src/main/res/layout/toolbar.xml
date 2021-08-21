@@ -4,7 +4,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/topAndBottomBackground"
+    android:background="@color/yet_background"
     android:elevation="4dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -28,22 +28,22 @@
             android:id="@+id/imageView5"
             android:layout_width="49dp"
             android:layout_height="27dp"
-            android:visibility="gone"
+
             app:layout_constraintBottom_toBottomOf="@+id/textView23"
             app:layout_constraintEnd_toStartOf="@+id/textView23"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView23"
-            app:srcCompat="@drawable/help" />
+            app:srcCompat="@drawable/logo" />
 
         <TextView
             android:id="@+id/textView23"
             android:layout_width="290dp"
             android:layout_height="31dp"
             android:fontFamily="@font/gotham_light"
-            android:gravity="center"
             android:text="@string/app_name"
             android:textColor="@color/white"
             android:textSize="20sp"
+            android:paddingLeft="10dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"

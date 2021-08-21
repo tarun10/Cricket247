@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
-        app:cardBackgroundColor="@color/yet_background"
+        app:cardBackgroundColor="@color/card_background_color"
         android:elevation="5dp">
 
         <androidx.appcompat.widget.LinearLayoutCompat
@@ -29,7 +29,7 @@
                 android:paddingRight="10dp"
                 android:paddingBottom="5dp"
                 android:text="@string/app_name"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color"
                 android:textSize="12sp"
                 android:visibility="gone" />
 
@@ -52,7 +52,7 @@
                         android:maxLines="1"
                         android:padding="5dp"
                         android:text="Status :"
-                        android:textColor="@color/white"
+                        android:textColor="@color/text_color"
                         android:textSize="12sp"
                         android:textStyle="bold" />
 
@@ -62,7 +62,7 @@
                         android:layout_height="wrap_content"
                         android:padding="5dp"
                         android:text="Date :"
-                        android:textColor="@color/white"
+                        android:textColor="@color/text_color"
                         android:textSize="12sp" />
 
                     <TextView
@@ -72,7 +72,7 @@
                         android:padding="5dp"
                         android:visibility="gone"
                         android:text="Venue :"
-                        android:textColor="@color/white"
+                        android:textColor="@color/text_color"
                         android:textSize="12sp" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
@@ -99,7 +99,7 @@
                             android:padding="5dp"
                             android:text="Ind"
                             android:textAllCaps="true"
-                            android:textColor="@color/white"
+                            android:textColor="@color/text_color"
                             android:textSize="10sp" />
 
                         <ImageView
@@ -128,7 +128,7 @@
                             android:padding="5dp"
                             android:text="Pak"
                             android:textAllCaps="true"
-                            android:textColor="@color/white"
+                            android:textColor="@color/text_color"
                             android:textSize="10sp" />
 
                         <ImageView
@@ -152,7 +152,7 @@
                 android:layout_height="wrap_content"
                 android:minHeight="25dp"
                 android:padding="10dp"
-                android:textColor="@color/white"
+                android:textColor="@color/text_color"
                 android:textSize="12sp"></TextView>
         </androidx.appcompat.widget.LinearLayoutCompat>
     </androidx.cardview.widget.CardView>

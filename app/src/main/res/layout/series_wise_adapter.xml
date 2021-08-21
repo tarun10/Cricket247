@@ -4,14 +4,14 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="5dp"
-    android:background="#6D5B8C"
+   app:cardBackgroundColor="@color/card_background_color"
     android:elevation="5dp"
     app:cardCornerRadius="10dp">
 
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/yet_background"
+        android:background="@android:color/transparent"
         android:elevation="5dp"
         android:id="@+id/itemClick"
         android:orientation="horizontal">
@@ -30,7 +30,7 @@
                 android:paddingLeft="10dp"
                 android:text="INDIA"
                 android:textSize="14sp"
-                android:textColor="@color/white" />
+                android:textColor="@color/text_color" />
 
             <TextView
                 android:id="@+id/seriesDate"

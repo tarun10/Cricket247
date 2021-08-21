@@ -40,7 +40,7 @@
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:backgroundTint="@color/yet_background"
+                        android:backgroundTint="@color/card_background_color"
                         android:weightSum="2"
                         app:cardCornerRadius="10dp">
 
@@ -70,7 +70,7 @@
                                         android:layout_toRightOf="@+id/teamFlag"
                                         android:fontFamily="@font/gotham_medium"
                                         android:text="--/-"
-                                        android:textColor="@color/white"
+                                        android:textColor="@color/text_color"
                                         android:textSize="14sp"
                                         android:visibility="visible" />
 
@@ -85,7 +85,7 @@
                                         android:fontFamily="@font/gotham_light"
                                         android:gravity="right"
                                         android:text="0.0"
-                                        android:textColor="@color/white"
+                                        android:textColor="@color/text_color"
                                         android:textSize="12sp" />
 
                                     <de.hdodenhof.circleimageview.CircleImageView
@@ -111,7 +111,7 @@
                                         android:layout_toRightOf="@+id/targetTeamImage"
                                         android:fontFamily="@font/gotham_medium"
                                         android:text="--/--/--"
-                                        android:textColor="@color/white"
+                                        android:textColor="@color/text_color"
                                         android:textSize="12sp"
                                         android:visibility="visible">
 
@@ -126,7 +126,7 @@
                                         android:layout_toRightOf="@+id/targetTeamImage"
                                         android:fontFamily="@font/gotham_light"
                                         android:text="--"
-                                        android:textColor="@color/white"
+                                        android:textColor="@color/text_color"
                                         android:textSize="12sp"
                                         android:visibility="visible">
 
@@ -164,7 +164,7 @@
                                         android:gravity="center"
                                         android:text="Sound is ON"
                                         android:textAllCaps="true"
-                                        android:textColor="@color/white"
+                                        android:textColor="@color/text_color"
                                         android:textSize="12sp" />
 
                                     <ImageView
@@ -179,14 +179,14 @@
                                     android:id="@+id/match_info"
                                     android:layout_width="match_parent"
                                     android:layout_height="70dp"
-                                    android:background="@color/white"
+                                    android:background="@color/text_headingt_color"
                                     android:ellipsize="end"
                                     android:fontFamily="@font/gotham_medium"
                                     android:gravity="center"
                                     android:maxLines="2"
                                     android:text="@string/app_name"
                                     android:textAlignment="center"
-                                    android:textColor="@color/yet_background"
+                                    android:textColor="@color/card_background_color"
                                     android:textSize="16sp" />
                             </LinearLayout>
                         </LinearLayout>
@@ -196,29 +196,33 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@color/yet_background"
+                        android:background="@color/card_background_color"
                         app:cardCornerRadius="10dp">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@color/yet_background"
+                            android:background="@color/card_background_color"
                             android:orientation="vertical">
 
                             <TextView
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="#2f0101"
                                 android:fontFamily="@font/gotham_medium"
                                 android:gravity="center"
                                 android:padding="10dp"
                                 android:text="Current over"
-                                android:textColor="@color/white" />
+                                android:textColor="@color/text_color" />
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/header_colour" />
 
                             <LinearLayout
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="@color/yet_background"
+                                android:background="@color/card_background_color"
                                 android:orientation="horizontal">
 
                                 <TextView
@@ -228,7 +232,7 @@
                                     android:fontFamily="@font/gotham_light"
                                     android:paddingLeft="10dp"
                                     android:text="Last 6 ball"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="12sp">
 
                                 </TextView>
@@ -337,7 +341,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:backgroundTint="@color/yet_background"
+                        android:backgroundTint="@color/card_background_color"
                         app:cardCornerRadius="7dp">
 
                         <LinearLayout
@@ -359,7 +363,7 @@
                                     android:padding="5dp"
                                     android:text="Favorite"
                                     android:textAllCaps="true"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="12sp" />
 
                                 <TextView
@@ -370,7 +374,7 @@
                                     android:fontFamily="@font/gotham_light"
                                     android:padding="5dp"
                                     android:textAllCaps="true"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="12sp">
 
                                 </TextView>
@@ -384,7 +388,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="12sp">
 
                                 </TextView>
@@ -399,7 +403,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="12sp">
 
                                 </TextView>
@@ -424,7 +428,7 @@
                                         android:fontFamily="@font/gotham_medium"
                                         android:padding="5dp"
                                         android:text="Over"
-                                        android:textColor="@color/white"
+                                        android:textColor="@color/text_color"
                                         android:textSize="12sp" />
 
                                     <TextView
@@ -437,7 +441,7 @@
                                         android:gravity="center"
                                         android:padding="5dp"
                                         android:text="0"
-                                        android:textColor="@color/white"
+                                        android:textColor="@color/text_color"
                                         android:textSize="12sp" />
 
                                 </LinearLayout>
@@ -456,7 +460,7 @@
                                         android:fontFamily="@font/gotham_medium"
                                         android:padding="5dp"
                                         android:text="SESSION"
-                                        android:textColor="@color/white"
+                                        android:textColor="@color/text_color"
                                         android:textSize="12sp" />
 
                                     <TextView
@@ -469,7 +473,7 @@
                                         android:gravity="center"
                                         android:padding="5dp"
                                         android:text="0"
-                                        android:textColor="@color/white"
+                                        android:textColor="@color/text_color"
                                         android:textSize="12sp" />
 
 
@@ -483,7 +487,7 @@
                                         android:gravity="center"
                                         android:padding="5dp"
                                         android:text="0"
-                                        android:textColor="@color/white"
+                                        android:textColor="@color/text_color"
                                         android:textSize="12sp">
 
                                     </TextView>
@@ -504,7 +508,7 @@
                                     android:gravity="left"
                                     android:padding="5dp"
                                     android:text="RUN X BALL"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="12sp" />
 
                                 <TextView
@@ -517,7 +521,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="12sp" />
 
 
@@ -531,7 +535,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="12sp">
 
                                 </TextView>
@@ -552,7 +556,7 @@
                         <LinearLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@color/yet_background"
+                            android:background="@color/card_background_color"
                             android:orientation="vertical"
                             android:padding="10dp">
 
@@ -569,7 +573,7 @@
                                     android:layout_weight="1"
                                     android:fontFamily="@font/gotham_medium"
                                     android:text=""
-                                    android:textColor="@color/white">
+                                    android:textColor="@color/text_color">
 
                                 </TextView>
 
@@ -584,7 +588,7 @@
                                     android:gravity="center"
                                     android:padding="3dp"
                                     android:text="0"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="11sp" />
 
 
@@ -598,7 +602,7 @@
                                     android:gravity="center"
                                     android:padding="3dp"
                                     android:text="0"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="11sp">
 
                                 </TextView>
@@ -620,7 +624,7 @@
                                     android:layout_weight="1"
                                     android:fontFamily="@font/gotham_medium"
                                     android:text=""
-                                    android:textColor="@color/white">
+                                    android:textColor="@color/text_color">
 
                                 </TextView>
 
@@ -635,7 +639,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="12sp" />
 
 
@@ -649,7 +653,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="12sp">
 
                                 </TextView>
@@ -671,7 +675,7 @@
                                     android:layout_weight="1"
                                     android:fontFamily="@font/gotham_medium"
                                     android:text=""
-                                    android:textColor="@color/white">
+                                    android:textColor="@color/text_color">
 
                                 </TextView>
 
@@ -686,7 +690,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="12sp" />
 
 
@@ -700,7 +704,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:textSize="12sp">
 
                                 </TextView>
@@ -723,20 +727,20 @@
                             android:id="@+id/current_ran_rate"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@color/yet_background"
+                            android:background="@color/card_background_color"
                             android:text="--"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/text_color"
                             android:textSize="12sp" />
 
                         <TextView
                             android:id="@+id/required_run_rate"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@color/yet_background"
+                            android:background="@color/card_background_color"
                             android:text="--"
                             android:textAlignment="center"
-                            android:textColor="@color/white"
+                            android:textColor="@color/text_color"
                             android:textSize="12sp" />
                     </androidx.cardview.widget.CardView>
 
@@ -744,24 +748,27 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="5dp"
-                        android:background="@color/yet_background"
+                        android:background="@color/card_background_color"
                         app:cardCornerRadius="10dp">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@color/yet_background"
+                            android:background="@color/card_background_color"
                             android:orientation="vertical">
 
-                            <include layout="@layout/bastma_header_layout">
+                            <include layout="@layout/bastma_header_layout" />
 
-                            </include>
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/header_colour" />
 
                             <androidx.appcompat.widget.LinearLayoutCompat
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
                                 android:layout_gravity="center_horizontal"
-                                android:background="@color/header_colour"
+
                                 android:orientation="horizontal"
                                 android:padding="10dp"
                                 android:weightSum="6">
@@ -773,7 +780,7 @@
                                     android:layout_weight="2"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="-"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/btRun1"
@@ -782,7 +789,7 @@
                                     android:layout_weight=".8"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/btBall1"
@@ -791,7 +798,7 @@
                                     android:layout_weight=".8"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/btFours1"
@@ -800,7 +807,7 @@
                                     android:layout_weight=".7"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/btSixes1"
@@ -809,7 +816,7 @@
                                     android:layout_weight=".7"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/btRunrates1"
@@ -819,7 +826,7 @@
                                     android:fontFamily="@font/gotham_light"
                                     android:maxLength="5"
                                     android:text="0"
-                                    android:textColor="@color/white"
+                                    android:textColor="@color/text_color"
                                     android:tooltipText="0" />
 
                             </androidx.appcompat.widget.LinearLayoutCompat>
@@ -839,7 +846,7 @@
                                     android:layout_weight="2"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="-"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/btRun2"
@@ -848,7 +855,7 @@
                                     android:layout_weight=".8"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/btBall2"
@@ -857,7 +864,7 @@
                                     android:layout_weight=".8"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/btFours2"
@@ -866,7 +873,7 @@
                                     android:layout_weight=".7"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/btSixes2"
@@ -875,7 +882,7 @@
                                     android:layout_weight=".7"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/btRunrates2"
@@ -885,7 +892,7 @@
                                     android:fontFamily="@font/gotham_light"
                                     android:maxLength="5"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                             </androidx.appcompat.widget.LinearLayoutCompat>
                         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -895,17 +902,21 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="10dp"
-                        android:background="@color/yet_background"
+                        android:background="@color/card_background_color"
                         app:cardCornerRadius="10dp">
 
                         <androidx.appcompat.widget.LinearLayoutCompat
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
-                            android:background="@color/yet_background"
+                            android:background="@color/card_background_color"
                             android:orientation="vertical">
 
-                            <include layout="@layout/bowling_header_layout"></include>
+                            <include layout="@layout/bowling_header_layout" />
 
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/header_colour" />
 
                             <androidx.appcompat.widget.LinearLayoutCompat
                                 android:layout_width="match_parent"
@@ -923,7 +934,7 @@
                                     android:layout_weight="2"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="-"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/currentBollerOver"
@@ -932,7 +943,7 @@
                                     android:layout_weight=".8"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/maden_over"
@@ -941,7 +952,7 @@
                                     android:layout_weight=".8"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/bowlerrun"
@@ -950,7 +961,7 @@
                                     android:layout_weight=".7"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/bowlWickets"
@@ -959,7 +970,7 @@
                                     android:layout_weight=".7"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                                 <TextView
                                     android:id="@+id/economy_rate"
@@ -968,7 +979,7 @@
                                     android:layout_weight="1"
                                     android:fontFamily="@font/gotham_light"
                                     android:text="0"
-                                    android:textColor="@color/white" />
+                                    android:textColor="@color/text_color" />
 
                             </androidx.appcompat.widget.LinearLayoutCompat>
                         </androidx.appcompat.widget.LinearLayoutCompat>
@@ -989,11 +1000,16 @@
                                 android:id="@+id/showSummary"
                                 android:layout_width="match_parent"
                                 android:layout_height="wrap_content"
-                                android:background="#2f0101"
+                                android:background="@color/card_background_color"
                                 android:fontFamily="@font/gotham_medium"
                                 android:padding="10dp"
                                 android:text="View Quick Summary"
-                                android:textColor="@color/white"></TextView>
+                                android:textColor="@color/text_color"></TextView>
+
+                            <View
+                                android:layout_width="match_parent"
+                                android:layout_height="1dp"
+                                android:background="@color/header_colour" />
 
                             <TextView
                                 android:id="@+id/summary"
@@ -1002,7 +1018,7 @@
                                 android:fitsSystemWindows="true"
                                 android:fontFamily="@font/gotham_light"
                                 android:textAlignment="center"
-                                android:textColor="@color/text_heading"></TextView>
+                                android:textColor="@color/text_color"></TextView>
                         </androidx.appcompat.widget.LinearLayoutCompat>
                     </androidx.cardview.widget.CardView>
                 </androidx.appcompat.widget.LinearLayoutCompat>

@@ -10,7 +10,7 @@
     <androidx.appcompat.widget.LinearLayoutCompat
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="@color/yet_background"
+        android:background="@color/card_background_color"
         android:orientation="vertical">
 
         <LinearLayout
@@ -31,7 +31,7 @@
             android:layout_height="wrap_content"
             android:padding="5dp"
             android:text="IPL 2021: Curfew in Maharashtra will help in smooth conduct"
-            android:textColor="@color/white"
+            android:textColor="@color/text_color"
             android:textSize="16sp" />
 
 
@@ -42,8 +42,9 @@
             android:ellipsize="end"
             android:paddingLeft="5dp"
             android:paddingRight="5dp"
+            android:paddingBottom="10dp"
             android:text="The second wave of covid-19 in india has been again"
-            android:textColor="@color/white"
+            android:textColor="@color/text_color"
             android:textSize="12sp" />
 
         <TextView

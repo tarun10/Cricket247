@@ -9,7 +9,7 @@
       "client_info": {
         "mobilesdk_app_id": "1:537065066230:android:9ef021ff8e1994d042e6d7",
         "android_client_info": {
-          "package_name": "com.learning.cricketfastline"
+          "package_name": "com.learning.cricket247"
         }
       },
       "oauth_client": [
@@ -17,7 +17,7 @@
           "client_id": "537065066230-c466qqlkdcp2v43aibof4g0flgoeqtpq.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.learning.cricketfastline",
+            "package_name": "com.learning.cricket247",
             "certificate_hash": "24a108cf117b9f26bea03f3b5ae9758ea0ae7a66"
           }
         },
