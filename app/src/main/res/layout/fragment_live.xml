@@ -179,7 +179,7 @@
                                     android:id="@+id/match_info"
                                     android:layout_width="match_parent"
                                     android:layout_height="70dp"
-                                    android:background="@color/text_headingt_color"
+                                    android:background="@color/black"
                                     android:ellipsize="end"
                                     android:fontFamily="@font/gotham_medium"
                                     android:gravity="center"
