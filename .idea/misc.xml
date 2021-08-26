@@ -4,9 +4,10 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
-        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_home.xml" value="0.22" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_live.xml" value="0.22" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/toolbar.xml" value="0.25" />
+        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/viewpager_header.xml" value="0.5" />
       </map>
     </option>
   </component>

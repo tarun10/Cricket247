@@ -4,7 +4,8 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:background="@color/yet_background"
+    android:background="#00000000"
+    android:translationZ="0.1dp"
     android:elevation="4dp"
     android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar">
 
@@ -48,10 +49,11 @@
                 android:id="@+id/imageView5"
                 android:layout_width="49dp"
                 android:layout_height="27dp"
-                app:layout_constraintBottom_toBottomOf="@+id/textView23"
-                app:layout_constraintEnd_toStartOf="@+id/textView23"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="@+id/textView23"
+                app:layout_constraintTop_toTopOf="parent"
                 app:srcCompat="@drawable/logo" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -62,7 +64,7 @@
             android:layout_width="0dp"
             android:layout_height="31dp"
             android:fontFamily="@font/gotham_light"
-            android:gravity="center"
+            android:gravity="left|center"
             android:paddingLeft="10dp"
             android:text="@string/app_name"
             android:textColor="@color/white"

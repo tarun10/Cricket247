@@ -106,7 +106,7 @@ public class HomePagerIndicatorAdaptor extends RecyclerView.Adapter<HomePagerInd
 
             if (liveScoreDataModel != null && !liveScoreDataModel.getJsondata().getBowler().equals("0")) {
                 holder.match_status.setText("LIVE");
-                holder.match_status.setTextColor(ContextCompat.getColor(context, R.color.red));
+                holder.match_status.setTextColor(ContextCompat.getColor(context, R.color.white));
             } else if (!eventTitleViews.get(position).getResult().equals("")) {
                 holder.match_status.setText("Finished");
                 holder.match_over.setText(eventTitleViews.get(position).getResult());

@@ -12,7 +12,7 @@
         android:padding="10dp"
         android:text="IPL 2021 "
         android:textAllCaps="true"
-        android:textColor="@color/tab_background"
+        android:textColor="@color/white"
         android:textSize="16sp"
         android:textStyle="bold" />
 

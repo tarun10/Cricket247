@@ -9,14 +9,14 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="220dp"
+        android:layout_height="150dp"
         android:orientation="vertical">
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/headerViewPager"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:background="@drawable/ground_bg">
+            >
 
         </androidx.viewpager2.widget.ViewPager2>
 
@@ -30,6 +30,7 @@
             android:layout_marginBottom="10dp"
             app:dotsColor="@color/white"
             app:dotsSize="10dp"
+            android:visibility="gone"
             app:dotsSpacing="5dp"
             app:progressMode="true"
             app:selectedDotColor="@android:color/black"
