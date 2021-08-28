@@ -33,6 +33,7 @@
     <color name="bottom_menu_icon_unselect">#ddc8e7</color>
     <color name="card_background_color">#FFFFFF</color>
     <color name="text_color">#600086</color>
+    <color name="text_status_color">#FFFFFF</color>
 </resources>
 
 

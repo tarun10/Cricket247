@@ -27,7 +27,9 @@
                     android:textAlignment="center"
                     android:textColor="@color/purple_700"
                     android:textSize="18sp"
-                    android:visibility="gone"></TextView>
+                    android:visibility="gone">
+
+                </TextView>
 
                 <androidx.appcompat.widget.LinearLayoutCompat
                     android:id="@+id/scoreCard"
@@ -172,7 +174,9 @@
                                         android:layout_width="30dp"
                                         android:layout_height="30dp"
                                         android:background="?attr/selectableItemBackgroundBorderless"
-                                        android:src="@drawable/ic_baseline_volume_up_24"></ImageView>
+                                        android:src="@drawable/ic_baseline_volume_up_black_24">
+
+                                    </ImageView>
                                 </LinearLayout>
 
                                 <TextView
@@ -388,7 +392,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/text_color"
+                                    android:textColor="@color/text_status_color"
                                     android:textSize="12sp">
 
                                 </TextView>
@@ -403,7 +407,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/text_color"
+                                    android:textColor="@color/text_status_color"
                                     android:textSize="12sp">
 
                                 </TextView>
@@ -441,7 +445,7 @@
                                         android:gravity="center"
                                         android:padding="5dp"
                                         android:text="0"
-                                        android:textColor="@color/text_color"
+                                        android:textColor="@color/text_status_color"
                                         android:textSize="12sp" />
 
                                 </LinearLayout>
@@ -473,7 +477,7 @@
                                         android:gravity="center"
                                         android:padding="5dp"
                                         android:text="0"
-                                        android:textColor="@color/text_color"
+                                        android:textColor="@color/text_status_color"
                                         android:textSize="12sp" />
 
 
@@ -487,7 +491,7 @@
                                         android:gravity="center"
                                         android:padding="5dp"
                                         android:text="0"
-                                        android:textColor="@color/text_color"
+                                        android:textColor="@color/text_status_color"
                                         android:textSize="12sp">
 
                                     </TextView>
@@ -521,7 +525,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/text_color"
+                                    android:textColor="@color/text_status_color"
                                     android:textSize="12sp" />
 
 
@@ -535,7 +539,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/text_color"
+                                    android:textColor="@color/text_status_color"
                                     android:textSize="12sp">
 
                                 </TextView>
@@ -588,7 +592,7 @@
                                     android:gravity="center"
                                     android:padding="3dp"
                                     android:text="0"
-                                    android:textColor="@color/text_color"
+                                    android:textColor="@color/text_status_color"
                                     android:textSize="11sp" />
 
 
@@ -602,7 +606,7 @@
                                     android:gravity="center"
                                     android:padding="3dp"
                                     android:text="0"
-                                    android:textColor="@color/text_color"
+                                    android:textColor="@color/text_status_color"
                                     android:textSize="11sp">
 
                                 </TextView>
@@ -639,7 +643,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/text_color"
+                                    android:textColor="@color/text_status_color"
                                     android:textSize="12sp" />
 
 
@@ -653,7 +657,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/text_color"
+                                    android:textColor="@color/text_status_color"
                                     android:textSize="12sp">
 
                                 </TextView>
@@ -690,7 +694,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/text_color"
+                                    android:textColor="@color/text_status_color"
                                     android:textSize="12sp" />
 
 
@@ -704,7 +708,7 @@
                                     android:gravity="center"
                                     android:padding="5dp"
                                     android:text="0"
-                                    android:textColor="@color/text_color"
+                                    android:textColor="@color/text_status_color"
                                     android:textSize="12sp">
 
                                 </TextView>

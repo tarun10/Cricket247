@@ -1,5 +1,6 @@
 package com.learning.cricket247.livescore.fragment;
 
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.speech.tts.TextToSpeech;
 import android.util.Log;
@@ -8,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import androidx.core.content.ContextCompat;
 import androidx.databinding.DataBindingUtil;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
@@ -128,6 +130,40 @@ public class LiveScoreFragment extends Fragment {
         View view = fragmentLiveBinding.getRoot();
         scoreInfo.put("matchId", getActivity().getIntent().getStringExtra("matchId"));
         matchType=getActivity().getIntent().getStringExtra("matchType");
+
+
+        int nightModeFlags =
+                getContext().getResources().getConfiguration().uiMode &
+                        Configuration.UI_MODE_NIGHT_MASK;
+
+        switch (nightModeFlags) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                if (isSoundOn) {
+                    isSoundOn = false;
+                    fragmentLiveBinding.soundIcon.setImageResource(R.drawable.ic_baseline_volume_off_24);
+                    fragmentLiveBinding.soundStatus.setText("Sound is off");
+                } else {
+                    isSoundOn = true;
+                    fragmentLiveBinding.soundIcon.setImageResource(R.drawable.ic_baseline_volume_up_24);
+                    fragmentLiveBinding.soundStatus.setText("Sound is on");
+                }
+                //fragmentLiveBinding.soundIcon.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.ground_dark_bg));
+                break;
+
+            case Configuration.UI_MODE_NIGHT_NO:
+                if (isSoundOn) {
+                    isSoundOn = false;
+                    fragmentLiveBinding.soundIcon.setImageResource(R.drawable.ic_baseline_volume_black_off_24);
+                    fragmentLiveBinding.soundStatus.setText("Sound is off");
+                } else {
+                    isSoundOn = true;
+                    fragmentLiveBinding.soundIcon.setImageResource(R.drawable.ic_baseline_volume_up_black_24);
+                    fragmentLiveBinding.soundStatus.setText("Sound is on");
+                }
+                //fragmentLiveBinding.soundIcon.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.ground_bg));
+                break;
+        }
+
         textToSpeech = new TextToSpeech(getActivity(), status -> {
             if (status == TextToSpeech.SUCCESS) {
                 textToSpeech.setLanguage(Locale.US);
@@ -145,15 +181,36 @@ public class LiveScoreFragment extends Fragment {
             fragmentLiveBinding.pullRefresh.setRefreshing(false);
         });
         fragmentLiveBinding.soundIcon.setOnClickListener(view1 -> {
-            if (isSoundOn) {
-                isSoundOn = false;
-                fragmentLiveBinding.soundIcon.setImageResource(R.drawable.ic_baseline_volume_off_24);
-                fragmentLiveBinding.soundStatus.setText("Sound is off");
-            } else {
-                isSoundOn = true;
-                fragmentLiveBinding.soundIcon.setImageResource(R.drawable.ic_baseline_volume_up_24);
-                fragmentLiveBinding.soundStatus.setText("Sound is on");
+
+            switch (nightModeFlags) {
+                case Configuration.UI_MODE_NIGHT_YES:
+                    if (isSoundOn) {
+                        isSoundOn = false;
+                        fragmentLiveBinding.soundIcon.setImageResource(R.drawable.ic_baseline_volume_off_24);
+                        fragmentLiveBinding.soundStatus.setText("Sound is off");
+                    } else {
+                        isSoundOn = true;
+                        fragmentLiveBinding.soundIcon.setImageResource(R.drawable.ic_baseline_volume_up_24);
+                        fragmentLiveBinding.soundStatus.setText("Sound is on");
+                    }
+                    //fragmentLiveBinding.soundIcon.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.ground_dark_bg));
+                    break;
+
+                case Configuration.UI_MODE_NIGHT_NO:
+                    if (isSoundOn) {
+                        isSoundOn = false;
+                        fragmentLiveBinding.soundIcon.setImageResource(R.drawable.ic_baseline_volume_black_off_24);
+                        fragmentLiveBinding.soundStatus.setText("Sound is off");
+                    } else {
+                        isSoundOn = true;
+                        fragmentLiveBinding.soundIcon.setImageResource(R.drawable.ic_baseline_volume_up_black_24);
+                        fragmentLiveBinding.soundStatus.setText("Sound is on");
+                    }
+                    //fragmentLiveBinding.soundIcon.setBackground(ContextCompat.getDrawable(getContext(), R.drawable.ground_bg));
+                    break;
             }
+
+
         });
         teamNmae = getActivity().getIntent().getStringExtra("message");
         CricketFastLine app = (CricketFastLine) getActivity().getApplication();

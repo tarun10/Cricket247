@@ -2,6 +2,7 @@ package com.learning.cricket247.viewpageradapters;
 
 import android.content.Context;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.net.Uri;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -50,6 +51,20 @@ public class HomePagerIndicatorAdaptor extends RecyclerView.Adapter<HomePagerInd
 
     @Override
     public void onBindViewHolder(@NonNull HeaderView holder, int position) {
+
+        int nightModeFlags =
+                context.getResources().getConfiguration().uiMode &
+                        Configuration.UI_MODE_NIGHT_MASK;
+        switch (nightModeFlags) {
+            case Configuration.UI_MODE_NIGHT_YES:
+                holder.liveCard.setBackground(ContextCompat.getDrawable(context, R.drawable.ground_dark_bg));
+                break;
+
+            case Configuration.UI_MODE_NIGHT_NO:
+                holder.liveCard.setBackground(ContextCompat.getDrawable(context, R.drawable.ground_bg));
+                break;
+        }
+
         if (eventTitleViews.get(position).getTitle().equals("adsbanner")) {
             holder.adsframe.setVisibility(View.VISIBLE);
             holder.liveCard.setVisibility(View.GONE);
@@ -106,7 +121,6 @@ public class HomePagerIndicatorAdaptor extends RecyclerView.Adapter<HomePagerInd
 
             if (liveScoreDataModel != null && !liveScoreDataModel.getJsondata().getBowler().equals("0")) {
                 holder.match_status.setText("LIVE");
-                holder.match_status.setTextColor(ContextCompat.getColor(context, R.color.white));
             } else if (!eventTitleViews.get(position).getResult().equals("")) {
                 holder.match_status.setText("Finished");
                 holder.match_over.setText(eventTitleViews.get(position).getResult());

@@ -4,15 +4,15 @@
     "type": "APK",
     "kind": "Directory"
   },
-  "applicationId": "com.learning.cricketfastline",
+  "applicationId": "com.learning.cricket247",
   "variantName": "release",
   "elements": [
     {
       "type": "SINGLE",
       "filters": [],
       "properties": [],
-      "versionCode": 60016,
-      "versionName": "60016",
+      "versionCode": 60017,
+      "versionName": "60017",
       "enabled": true,
       "outputFile": "app-release.apk"
     }

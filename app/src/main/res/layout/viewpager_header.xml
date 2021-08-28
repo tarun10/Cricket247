@@ -82,7 +82,6 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="8dp"
-            android:layout_marginEnd="8dp"
             android:fontFamily="@font/gotham_medium"
             android:gravity="end"
             android:padding="5dp"
@@ -97,14 +96,16 @@
 
         <TextView
             android:id="@+id/teamBscore"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:fontFamily="@font/gotham_medium"
             android:padding="5dp"
+            android:gravity="center_vertical|right"
             android:text="185/6"
             android:textColor="@color/homeheadertextcolor"
             android:textSize="12sp"
-            app:layout_constraintEnd_toEndOf="@+id/teamB"
+            app:layout_constraintEnd_toStartOf="@+id/teamBFlag"
+            app:layout_constraintStart_toEndOf="@+id/constraintLayoutHeaderSession"
             app:layout_constraintTop_toBottomOf="@+id/teamB">
 
         </TextView>
@@ -114,14 +115,16 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="8dp"
             android:fontFamily="@font/gotham_medium"
-            android:text="Status"
-            android:textColor="@color/purple_700"
-            android:textSize="12sp"
+            android:text=""
+            android:textColor="@color/text_status_color"
+            android:textSize="10sp"
             android:textStyle="bold"
             app:layout_constraintEnd_toStartOf="@+id/teamBFlag"
             app:layout_constraintStart_toEndOf="@+id/teamAFlag"
-            app:layout_constraintTop_toTopOf="@+id/teamA">
+            app:layout_constraintTop_toTopOf="parent">
 
         </TextView>
 
@@ -216,9 +219,12 @@
             android:visibility="gone"
             android:id="@+id/adsframe"
             android:layout_width="match_parent"
-            android:layout_height="190dp"
+            android:layout_height="150dp"
             android:scaleType="fitXY"
-            android:src="@drawable/adsbanner"></ImageView>
+            android:padding="10dp"
+            android:src="@drawable/adsbanner">
+
+        </ImageView>
 
 <!--    </androidx.cardview.widget.CardView>-->
 </androidx.appcompat.widget.LinearLayoutCompat>
