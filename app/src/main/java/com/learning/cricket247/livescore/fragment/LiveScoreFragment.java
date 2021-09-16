@@ -453,13 +453,17 @@ public class LiveScoreFragment extends Fragment {
                     fragmentLiveBinding.matchInfo.setText(liveScoreDataModel.getJsondata().getScore());
                     //lst 6 balls
                     if (!liveScoreDataModel.getJsondata().getLast6Balls().contains("-----")) {
-                        String[] lastSixBall = liveScoreDataModel.getJsondata().getLast6Balls().split("-");
-                        fragmentLiveBinding.bowlone.setText(lastSixBall[0]);
-                        fragmentLiveBinding.bowltwo.setText(lastSixBall[1]);
-                        fragmentLiveBinding.bowlthree.setText(lastSixBall[2]);
-                        fragmentLiveBinding.bowlfour.setText(lastSixBall[3]);
-                        fragmentLiveBinding.bowlfive.setText(lastSixBall[4]);
-                        fragmentLiveBinding.bowlsix.setText(lastSixBall[5]);
+                        try {
+                            String[] lastSixBall = liveScoreDataModel.getJsondata().getLast6Balls().split("-");
+                            fragmentLiveBinding.bowlone.setText(lastSixBall[0]);
+                            fragmentLiveBinding.bowltwo.setText(lastSixBall[1]);
+                            fragmentLiveBinding.bowlthree.setText(lastSixBall[2]);
+                            fragmentLiveBinding.bowlfour.setText(lastSixBall[3]);
+                            fragmentLiveBinding.bowlfive.setText(lastSixBall[4]);
+                            fragmentLiveBinding.bowlsix.setText(lastSixBall[5]);
+                        }catch (Exception e){
+                            Log.e("livescorefragment","balls exception in livescorefragment");
+                        }
 
                     }
 
