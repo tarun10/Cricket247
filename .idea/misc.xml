@@ -9,11 +9,12 @@
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/drawable/ic_baseline_volume_up_black_24.xml" value="0.19907407407407407" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/activity_main.xml" value="0.20416666666666666" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_home.xml" value="0.22" />
-        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_live.xml" value="0.22" />
+        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_live.xml" value="0.5" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_live_home.xml" value="0.20416666666666666" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/heder_recycler_layout.xml" value="0.20416666666666666" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/toolbar.xml" value="0.25" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/upcoming_fragement.xml" value="0.20416666666666666" />
+        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/upcoming_recycler_adapter_items.xml" value="0.20416666666666666" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/viewpager_header.xml" value="0.22" />
       </map>
     </option>

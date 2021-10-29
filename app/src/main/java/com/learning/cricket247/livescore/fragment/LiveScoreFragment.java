@@ -412,7 +412,7 @@ public class LiveScoreFragment extends Fragment {
 
 
         } else {
-            fragmentLiveBinding.teamFlag.setVisibility(View.GONE);
+//            fragmentLiveBinding.teamFlag.setVisibility(View.GONE);
         }
 
 

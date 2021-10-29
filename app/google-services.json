@@ -1,41 +1,33 @@
 {
   "project_info": {
-    "project_number": "537065066230",
-    "project_id": "cricket-fast-line-4454d",
-    "storage_bucket": "cricket-fast-line-4454d.appspot.com"
+    "project_number": "185131736673",
+    "project_id": "cricket247-7933a",
+    "storage_bucket": "cricket247-7933a.appspot.com"
   },
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:537065066230:android:9ef021ff8e1994d042e6d7",
+        "mobilesdk_app_id": "1:185131736673:android:8dea6abd51f52f5705d420",
         "android_client_info": {
           "package_name": "com.learning.cricket247"
         }
       },
       "oauth_client": [
         {
-          "client_id": "537065066230-c466qqlkdcp2v43aibof4g0flgoeqtpq.apps.googleusercontent.com",
-          "client_type": 1,
-          "android_info": {
-            "package_name": "com.learning.cricket247",
-            "certificate_hash": "24a108cf117b9f26bea03f3b5ae9758ea0ae7a66"
-          }
-        },
-        {
-          "client_id": "537065066230-j4ab572d6qa8k6k4gmcc7ja74llqs8jq.apps.googleusercontent.com",
+          "client_id": "185131736673-lk554ua2bgkhfg8oi40hvkhdlr4du8v2.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
       "api_key": [
         {
-          "current_key": "AIzaSyDhzb-Lzj46Hbmm8VMSmrKFoW06jtypDUU"
+          "current_key": "AIzaSyAkZEpviHSJB9bFFReJhPZbKPLjI7proOU"
         }
       ],
       "services": {
         "appinvite_service": {
           "other_platform_oauth_client": [
             {
-              "client_id": "537065066230-j4ab572d6qa8k6k4gmcc7ja74llqs8jq.apps.googleusercontent.com",
+              "client_id": "185131736673-lk554ua2bgkhfg8oi40hvkhdlr4du8v2.apps.googleusercontent.com",
               "client_type": 3
             }
           ]

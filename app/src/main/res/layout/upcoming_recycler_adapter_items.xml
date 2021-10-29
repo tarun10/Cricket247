@@ -70,10 +70,10 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:padding="5dp"
-                        android:visibility="gone"
                         android:text="Venue :"
                         android:textColor="@color/text_color"
-                        android:textSize="12sp" />
+                        android:textSize="12sp"
+                        android:visibility="gone" />
                 </androidx.appcompat.widget.LinearLayoutCompat>
 
                 <LinearLayout
