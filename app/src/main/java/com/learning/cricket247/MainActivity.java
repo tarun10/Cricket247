@@ -20,6 +20,8 @@
  import androidx.fragment.app.Fragment;
  import androidx.navigation.NavController;
 
+ import com.bumptech.glide.Glide;
+ import com.bumptech.glide.load.engine.DiskCacheStrategy;
  import com.google.android.gms.tasks.OnFailureListener;
  import com.google.android.gms.tasks.OnSuccessListener;
  import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -115,6 +117,17 @@
      private void init() {
 
         adsframe = findViewById(R.id.adsframe);
+
+        try {
+            Glide.
+                    with(getApplicationContext()).
+                    load(""+ConstantLinks.BANNER_IMAGE_URL)
+                    .into(adsframe);
+
+        }catch (Exception e){
+
+        }
+
         bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnNavigationItemSelectedListener(listener);
         getSupportFragmentManager().beginTransaction().replace(R.id.fragment_conainer, new HomeFragment()).commit();
@@ -123,10 +136,12 @@
         setSupportActionBar(toolbar);
 
         adsframe.setOnClickListener(view -> {
+
             Intent i = new Intent(Intent.ACTION_VIEW);
-            i.setData(Uri.parse(ConstantLinks.WHATSAPPLINK));
+            i.setData(Uri.parse(ConstantLinks.getWHATSAPPLINK()));
             startActivity(i);
         });
+
     }
 
 
