@@ -50,7 +50,8 @@ public class SplashActivity extends AppCompatActivity {
     private int inAppUpdateType = AppUpdateType.IMMEDIATE;
     private com.google.android.play.core.tasks.Task<AppUpdateInfo> appUpdateInfoTask;
     private InstallStateUpdatedListener installStateUpdatedListener;
-
+    String mLatestVersionName;
+    VersionChecker versionChecker;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -60,6 +61,9 @@ public class SplashActivity extends AppCompatActivity {
 //        appUpdate();
         FirebaseMessaging.getInstance().subscribeToTopic("all");
 
+        versionChecker = new VersionChecker();
+        appUpdatebyjsoup();
+
 //        coordinatorLayout = findViewById(R.id.coordinateLayout);
         // Creates instance of the manager.
         mAppUpdateManager = AppUpdateManagerFactory.create(this);
@@ -67,72 +71,72 @@ public class SplashActivity extends AppCompatActivity {
         appUpdateInfoTask = mAppUpdateManager.getAppUpdateInfo();
         //lambda operation used for below listener
         //For flexible update
-        installStateUpdatedListener = installState -> {
-            if (installState.installStatus() == InstallStatus.DOWNLOADED) {
-                popupSnackbarForCompleteUpdate();
-            }
-        };
-        mAppUpdateManager.registerListener(installStateUpdatedListener);
+//        installStateUpdatedListener = installState -> {
+//            if (installState.installStatus() == InstallStatus.DOWNLOADED) {
+//                popupSnackbarForCompleteUpdate();
+//            }
+//        };
+//        mAppUpdateManager.registerListener(installStateUpdatedListener);
 
-        inAppUpdate();
+//        inAppUpdate();
 
         FirebaseDatabase database = FirebaseDatabase.getInstance();
         DatabaseReference myRef = database.getReference("AppUpdate");
-        myRef.addValueEventListener(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot snapshot) {
-//              String s = (String) snapshot.getValue();
-                Context context = getApplicationContext();
-                PackageInfo pInfo = null;
-                try {
-                    pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
-                    int currenVersion = pInfo.versionCode;
-                    int  firebaseVersion = Integer.parseInt(snapshot.getValue().toString());
-                    if (firebaseVersion > currenVersion){
-                        AlertDialog.Builder builder = new AlertDialog.Builder(SplashActivity.this);
-                        builder.setMessage("New version of Cricket247 is available please update....");
-                        builder.setTitle("New Udpate");
-                        builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialogInterface, int i) {
-                                        try {
-                                            Intent appStoreIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName()));
-                                            appStoreIntent.setPackage("com.android.vending");
-
-                                            startActivity(appStoreIntent);
-                                        } catch (android.content.ActivityNotFoundException exception) {
-                                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName())));
-                                        }
-                                    }
-                                });
-                        AlertDialog alert = builder.create();
-                        alert.show();
-                        Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
-                        pbutton.setBackgroundColor(Color.GREEN);
-                    }else {
-                        new Handler().postDelayed(new Runnable(){
-                            @Override
-                            public void run() {
-                                Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
-                                startActivity(mainIntent);
-                                finish();
-                            }
-                        }, SPLASH_DISPLAY_LENGTH);
-                    }
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-
-              Log.d("valueeeeee",snapshot.getValue().toString());
-
-
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError error) {
-
-            }
-        });
+//        myRef.addValueEventListener(new ValueEventListener() {
+//            @Override
+//            public void onDataChange(@NonNull DataSnapshot snapshot) {
+////              String s = (String) snapshot.getValue();
+//                Context context = getApplicationContext();
+//                PackageInfo pInfo = null;
+//                try {
+//                    pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+//                    int currenVersion = pInfo.versionCode;
+//                    int  firebaseVersion = Integer.parseInt(snapshot.getValue().toString());
+//                    if (firebaseVersion > currenVersion){
+//                        AlertDialog.Builder builder = new AlertDialog.Builder(SplashActivity.this);
+//                        builder.setMessage("New version of Cricket247 is available please update....");
+//                        builder.setTitle("New Udpate");
+//                        builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
+//                                    @Override
+//                                    public void onClick(DialogInterface dialogInterface, int i) {
+//                                        try {
+//                                            Intent appStoreIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName()));
+//                                            appStoreIntent.setPackage("com.android.vending");
+//
+//                                            startActivity(appStoreIntent);
+//                                        } catch (android.content.ActivityNotFoundException exception) {
+//                                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName())));
+//                                        }
+//                                    }
+//                                });
+//                        AlertDialog alert = builder.create();
+//                        alert.show();
+//                        Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+//                        pbutton.setBackgroundColor(Color.GREEN);
+//                    }else {
+//                        new Handler().postDelayed(new Runnable(){
+//                            @Override
+//                            public void run() {
+//                                Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
+//                                startActivity(mainIntent);
+//                                finish();
+//                            }
+//                        }, SPLASH_DISPLAY_LENGTH);
+//                    }
+//                } catch (Exception e) {
+//                    e.printStackTrace();
+//                }
+//
+//              Log.d("valueeeeee",snapshot.getValue().toString());
+//
+//
+//            }
+//
+//            @Override
+//            public void onCancelled(@NonNull DatabaseError error) {
+//
+//            }
+//        });
 
 
 
@@ -158,6 +162,7 @@ public class SplashActivity extends AppCompatActivity {
             @Override
             public void onCancelled(@NonNull DatabaseError error) {
 
+                Toast.makeText(getApplicationContext(), "", Toast.LENGTH_SHORT).show();
             }
         });
     }
@@ -206,116 +211,167 @@ public class SplashActivity extends AppCompatActivity {
 //    }
 
 
-    @Override
-    protected void onResume() {
+//    @Override
+//    protected void onResume() {
+//        try {
+//            mAppUpdateManager.getAppUpdateInfo().addOnSuccessListener(appUpdateInfo -> {
+//                if (appUpdateInfo.updateAvailability() ==
+//                        UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
+//                    // If an in-app update is already running, resume the update.
+//                    try {
+//                        mAppUpdateManager.startUpdateFlowForResult(
+//                                appUpdateInfo,
+//                                inAppUpdateType,
+//                                this,
+//                                RC_APP_UPDATE);
+//                    } catch (IntentSender.SendIntentException e) {
+//                        e.printStackTrace();
+//                    }
+//                }
+//            });
+//
+//
+//            mAppUpdateManager.getAppUpdateInfo().addOnSuccessListener(appUpdateInfo -> {
+//                //For flexible update
+//                if (appUpdateInfo.installStatus() == InstallStatus.DOWNLOADED) {
+//                    popupSnackbarForCompleteUpdate();
+//                }
+//            });
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//        super.onResume();
+//    }
+
+//    @Override
+//    protected void onDestroy() {
+//        mAppUpdateManager.unregisterListener(installStateUpdatedListener);
+//        super.onDestroy();
+//    }
+
+
+//    @Override
+//    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+//        super.onActivityResult(requestCode, resultCode, data);
+//        if (requestCode == RC_APP_UPDATE) {
+//            //when user clicks update button
+//            if (resultCode == RESULT_OK) {
+//                Toast.makeText(SplashActivity.this, "App download starts...", Toast.LENGTH_LONG).show();
+//            } else if (resultCode != RESULT_CANCELED) {
+//                //if you want to request the update again just call checkUpdate()
+//                Toast.makeText(SplashActivity.this, "App download canceled.", Toast.LENGTH_LONG).show();
+//            } else {
+//                Toast.makeText(SplashActivity.this, "App download failed.", Toast.LENGTH_LONG).show();
+//            }
+//        }
+//    }
+
+
+//    private void inAppUpdate() {
+//
+//        try {
+//            // Checks that the platform will allow the specified type of update.
+//            appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
+//                @Override
+//                public void onSuccess(AppUpdateInfo appUpdateInfo) {
+//                    if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
+//                            // For a flexible update, use AppUpdateType.FLEXIBLE
+//                            && appUpdateInfo.isUpdateTypeAllowed(inAppUpdateType)) {
+//                        // Request the update.
+//
+//                        try {
+//                            mAppUpdateManager.startUpdateFlowForResult(
+//                                    // Pass the intent that is returned by 'getAppUpdateInfo()'.
+//                                    appUpdateInfo,
+//                                    // Or 'AppUpdateType.FLEXIBLE' for flexible updates.
+//                                    inAppUpdateType,
+//                                    // The current activity making the update request.
+//                                    SplashActivity.this,
+//                                    // Include a request code to later monitor this update request.
+//                                    RC_APP_UPDATE);
+//                        } catch (IntentSender.SendIntentException ignored) {
+//
+//                        }
+//                    }
+//                }
+//            });
+//        } catch (Exception e) {
+//            e.printStackTrace();
+//        }
+//
+//    }
+
+
+//    private void popupSnackbarForCompleteUpdate() {
+//        try {
+//            Snackbar snackbar =
+//                    Snackbar.make(
+//                            findViewById(R.id.coordinateLayout),
+//                            "An update has just been downloaded.\nRestart to update",
+//                            Snackbar.LENGTH_INDEFINITE);
+//
+//            snackbar.setAction("INSTALL", view -> {
+//                if (mAppUpdateManager != null){
+//                    mAppUpdateManager.completeUpdate();
+//                }
+//            });
+//            snackbar.setActionTextColor(getResources().getColor(R.color.white));
+//            snackbar.show();
+//
+//        } catch (Resources.NotFoundException e) {
+//            e.printStackTrace();
+//        }
+//    }
+
+
+    public void appUpdatebyjsoup() {
+        Context context = getApplicationContext();
+        PackageInfo pInfo = null;
         try {
-            mAppUpdateManager.getAppUpdateInfo().addOnSuccessListener(appUpdateInfo -> {
-                if (appUpdateInfo.updateAvailability() ==
-                        UpdateAvailability.DEVELOPER_TRIGGERED_UPDATE_IN_PROGRESS) {
-                    // If an in-app update is already running, resume the update.
-                    try {
-                        mAppUpdateManager.startUpdateFlowForResult(
-                                appUpdateInfo,
-                                inAppUpdateType,
-                                this,
-                                RC_APP_UPDATE);
-                    } catch (IntentSender.SendIntentException e) {
-                        e.printStackTrace();
-                    }
-                }
-            });
+            pInfo = context.getPackageManager().getPackageInfo(context.getPackageName(), 0);
+            String currenVersion = pInfo.versionName;
+            mLatestVersionName = versionChecker.execute().get();
 
-
-            mAppUpdateManager.getAppUpdateInfo().addOnSuccessListener(appUpdateInfo -> {
-                //For flexible update
-                if (appUpdateInfo.installStatus() == InstallStatus.DOWNLOADED) {
-                    popupSnackbarForCompleteUpdate();
-                }
-            });
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
-        super.onResume();
-    }
-
-    @Override
-    protected void onDestroy() {
-        mAppUpdateManager.unregisterListener(installStateUpdatedListener);
-        super.onDestroy();
-    }
-
-
-    @Override
-    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
-        super.onActivityResult(requestCode, resultCode, data);
-        if (requestCode == RC_APP_UPDATE) {
-            //when user clicks update button
-            if (resultCode == RESULT_OK) {
-                Toast.makeText(SplashActivity.this, "App download starts...", Toast.LENGTH_LONG).show();
-            } else if (resultCode != RESULT_CANCELED) {
-                //if you want to request the update again just call checkUpdate()
-                Toast.makeText(SplashActivity.this, "App download canceled.", Toast.LENGTH_LONG).show();
-            } else {
-                Toast.makeText(SplashActivity.this, "App download failed.", Toast.LENGTH_LONG).show();
-            }
-        }
-    }
-
-
-    private void inAppUpdate() {
-
-        try {
-            // Checks that the platform will allow the specified type of update.
-            appUpdateInfoTask.addOnSuccessListener(new OnSuccessListener<AppUpdateInfo>() {
-                @Override
-                public void onSuccess(AppUpdateInfo appUpdateInfo) {
-                    if (appUpdateInfo.updateAvailability() == UpdateAvailability.UPDATE_AVAILABLE
-                            // For a flexible update, use AppUpdateType.FLEXIBLE
-                            && appUpdateInfo.isUpdateTypeAllowed(inAppUpdateType)) {
-                        // Request the update.
-
+            currenVersion = currenVersion.replaceAll("\\.","");
+            mLatestVersionName = mLatestVersionName.replaceAll("\\.","");
+            int one,two;
+            one = Integer.parseInt(currenVersion);
+            two = Integer.parseInt(mLatestVersionName);
+            if (one < two) {
+                AlertDialog.Builder builder = new AlertDialog.Builder(SplashActivity.this);
+                builder.setMessage("New version of Cricket247 is available please update....");
+                builder.setTitle("New Udpate");
+                builder.setPositiveButton("Update", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialogInterface, int i) {
                         try {
-                            mAppUpdateManager.startUpdateFlowForResult(
-                                    // Pass the intent that is returned by 'getAppUpdateInfo()'.
-                                    appUpdateInfo,
-                                    // Or 'AppUpdateType.FLEXIBLE' for flexible updates.
-                                    inAppUpdateType,
-                                    // The current activity making the update request.
-                                    SplashActivity.this,
-                                    // Include a request code to later monitor this update request.
-                                    RC_APP_UPDATE);
-                        } catch (IntentSender.SendIntentException ignored) {
+                            Intent appStoreIntent = new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getPackageName()));
+                            appStoreIntent.setPackage("com.android.vending");
 
+                            startActivity(appStoreIntent);
+                        } catch (android.content.ActivityNotFoundException exception) {
+                            startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getPackageName())));
                         }
                     }
-                }
-            });
+                });
+                AlertDialog alert = builder.create();
+                alert.show();
+                Button pbutton = alert.getButton(DialogInterface.BUTTON_POSITIVE);
+                pbutton.setBackgroundColor(Color.GREEN);
+            } else {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent mainIntent = new Intent(SplashActivity.this, MainActivity.class);
+                        startActivity(mainIntent);
+                        finish();
+                    }
+                }, SPLASH_DISPLAY_LENGTH);
+            }
         } catch (Exception e) {
             e.printStackTrace();
-        }
 
-    }
-
-
-    private void popupSnackbarForCompleteUpdate() {
-        try {
-            Snackbar snackbar =
-                    Snackbar.make(
-                            findViewById(R.id.coordinateLayout),
-                            "An update has just been downloaded.\nRestart to update",
-                            Snackbar.LENGTH_INDEFINITE);
-
-            snackbar.setAction("INSTALL", view -> {
-                if (mAppUpdateManager != null){
-                    mAppUpdateManager.completeUpdate();
-                }
-            });
-            snackbar.setActionTextColor(getResources().getColor(R.color.white));
-            snackbar.show();
-
-        } catch (Resources.NotFoundException e) {
-            e.printStackTrace();
         }
     }
 }

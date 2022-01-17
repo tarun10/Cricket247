@@ -11,11 +11,17 @@
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/activity_point_tablectivity.xml" value="0.20416666666666666" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/activity_splash.xml" value="0.20416666666666666" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/activity_tab_layout_main.xml" value="0.20416666666666666" />
+        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/all_series_fragment.xml" value="0.20208333333333334" />
+        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/bestman_adapter.xml" value="0.20416666666666666" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_home.xml" value="0.22" />
-        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_live.xml" value="0.5" />
+        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_live.xml" value="0.22" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_live_home.xml" value="0.20416666666666666" />
+        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_scorecard.xml" value="0.20416666666666666" />
+        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_series.xml" value="0.1984375" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/fragment_settings.xml" value="0.20416666666666666" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/heder_recycler_layout.xml" value="0.20416666666666666" />
+        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/series_adapter.xml" value="0.1984375" />
+        <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/series_wise_adapter.xml" value="0.20208333333333334" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/toolbar.xml" value="0.25" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/upcoming_fragement.xml" value="0.20416666666666666" />
         <entry key="..\:/tarunworkspace/cricket247/app/src/main/res/layout/upcoming_recycler_adapter_items.xml" value="0.20416666666666666" />

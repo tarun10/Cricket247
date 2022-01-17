@@ -200,6 +200,38 @@
                                     android:textSize="16sp" />
                             </LinearLayout>
                         </LinearLayout>
+
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/pendingRunAndBallCardView"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:visibility="gone"
+                        android:background="@color/card_background_color"
+                        app:cardCornerRadius="5dp">
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center">
+
+                            <TextView
+                                android:padding="5dp"
+                                android:id="@+id/pendingRunAndBall"
+                                android:layout_width="match_parent"
+                                android:layout_height="wrap_content"
+                                android:text=""
+                                android:textSize="20dp"
+                                android:gravity="center"
+                                >
+
+                            </TextView>
+
+                        </LinearLayout>
+
                     </androidx.cardview.widget.CardView>
 
                     <androidx.cardview.widget.CardView
@@ -377,7 +409,7 @@
                                     android:textSize="12sp" />
 
                                 <TextView
-                                    android:id="@+id/fav_team_name"
+                                    android:id="@+id/favteamname"
                                     android:layout_width="wrap_content"
                                     android:layout_height="wrap_content"
                                     android:layout_weight="1"
@@ -427,9 +459,8 @@
                                 android:orientation="horizontal">
 
                                 <LinearLayout
-                                    android:layout_width="0dp"
+                                    android:layout_width="wrap_content"
                                     android:layout_height="match_parent"
-                                    android:layout_weight="1"
                                     android:orientation="horizontal">
 
                                     <TextView
@@ -461,6 +492,7 @@
                                     android:layout_height="match_parent"
                                     android:layout_weight="1"
                                     android:gravity="right"
+                                    android:paddingLeft="5dp"
                                     android:orientation="horizontal">
 
                                     <TextView
@@ -469,6 +501,7 @@
                                         android:layout_weight="1"
                                         android:fontFamily="@font/gotham_medium"
                                         android:padding="5dp"
+                                        android:gravity="right"
                                         android:text="SESSION"
                                         android:textColor="@color/text_color"
                                         android:textSize="12sp" />

@@ -43,6 +43,8 @@ public class DateWiseRecyclerViewAdapter extends RecyclerView.Adapter<DateWiseRe
     @Override
     public void onBindViewHolder(@NonNull TitleViewHolder holder, int position) {
 
+        try {
+
         MatchWithTitle eventTitleView = eventTitleViews.get(position);
         holder.header_title.setText(eventTitleView.getTitle());
         holder.layout.removeAllViews();
@@ -75,6 +77,9 @@ public class DateWiseRecyclerViewAdapter extends RecyclerView.Adapter<DateWiseRe
             holder.layout.addView(itemView);
         });
 
+        }catch (Exception e){
+
+        }
     }
 
     @Override
